@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<meta charset="UTF-8" />
+<head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous" />
+</head>
+<nav th:fragment="navigation"
+	class="navbar navbar-expand-lg navbar-light bg-light">
+	<h1>Pollos</h1>
+	<a class="btn btn-secondary" href="/login">Login</a> <a
+		class="btn btn-secondary" href="/logout">Logout</a> <a
+		class="btn btn-secondary" href="/customerlookup">Buscar Cliente</a> <a
+		class="btn btn-secondary" href="/menu">Menú</a>
+</nav>
+<body>
+<div class="container">
+	<h1>Iniciar Sesión</h1>
+    <p class="error" th:text="${error}"></p>
+    <form method="post">
+        <table>
+            <tr>
+                <td><label for="username">Usuario</label></td>
+                <td>
+                    <input name="username" type="text" th:value="${username}"></input>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">Contraseña</label></td>
+                <td>
+                    <input name="password" type="password"></input>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-primary" type="submit">Iniciar</button>
+    </form>
+    <p>Si eres nuevo usuario: <a href="/registeremployee">Registrate aquí!</a></p>
+</div>
+</body>
+</html>
